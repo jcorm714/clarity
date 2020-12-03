@@ -2,6 +2,7 @@
 #include"opencv2/opencv.hpp"
 #include"headers/Image.h"
 #include"headers/BinaryThreshold.h"
+#include"headers/Erosion.h"
 using namespace cv;
 
 int main(int argc, char **argv){
@@ -15,7 +16,10 @@ int main(int argc, char **argv){
         bt.process();
         bt.display();
         waitKey(0);
-       
+        Erosion er(bt.getImage(), 0, 5);
+        er.process();
+        er.display();
+        waitKey(0);
 
         return 0;
 }
