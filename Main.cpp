@@ -3,6 +3,7 @@
 #include"headers/Image.h"
 #include"headers/BinaryThreshold.h"
 #include"headers/Erosion.h"
+#include"headers/Dilation.h"
 using namespace cv;
 
 int main(int argc, char **argv){
@@ -20,6 +21,10 @@ int main(int argc, char **argv){
         er.process();
         er.display();
         waitKey(0);
+        Dilation dt(er.getImage(), 0, 5);
+        dt.process();
+        dt.display();
+        waitKey();
 
         return 0;
 }
