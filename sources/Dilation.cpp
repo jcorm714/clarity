@@ -33,9 +33,7 @@ cv::Mat Dilation::process(){
                 break;
         }
 
-        cv::Mat element cv::getStructuringElement(dType,
-                                                  cv::Size(2 * dilationSize + 1,  2 * dilationSize +1),
-                                                  cv::Point(dilationSize, dilationSize));
+        cv::Mat element = cv::getStructuringElement(dType, cv::Size(2*dilationSize + 1, 2* dilationSize + 1),cv::Point(dilationSize, dilationSize));
         cv::dilate(mImage, dst, element);
         return dst;
 }
